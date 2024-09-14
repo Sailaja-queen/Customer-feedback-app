@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const questions = [
-     { id: 1, text: 'How satisfied are you with our products?', type: 'rating', options: [1,2,3,4,5] },
-     { id: 2, text: 'How fair are the prices compared to similar retailers?', type: 'rating', options: [1,2,3,4,5] },
-     { id: 3, text: 'How satisfied are you with the value for money of your purchase?', type: 'rating', options: [1,2,3,4,5] },
-     { id: 4, text: 'On a scale of 1-10, how would you recommend us to your friends and family?', type: 'rating', options: Array.from({ length: 10 },(_,i) => i + 1) },
-     { id: 5, text: 'What could we do to improve our service?', type: 'text'}
+     { id: 1, text: '1 . How satisfied are you with our products?', type: 'rating', options: [1,2,3,4,5] },
+     { id: 2, text: '2 . How fair are the prices compared to similar retailers?', type: 'rating', options: [1,2,3,4,5] },
+     { id: 3, text: '3 . How satisfied are you with the value for money of your purchase?', type: 'rating', options: [1,2,3,4,5] },
+     { id: 4, text: '4 . On a scale of 1-10, how would you recommend us to your friends and family?', type: 'rating', options: Array.from({ length: 10 },(_,i) => i + 1) },
+     { id: 5, text: '5 . What could we do to improve our service?', type: 'text'}
 ]
 
 function SurveyScreen() {
@@ -42,7 +42,7 @@ const currentQuestion = questions[currentQuestionIndex];
       <h1 className="survey-title">Customer Survey</h1>
       <div className="question-container">
         <div className="question-number">
-          Question {currentQuestionIndex + 1} / {questions.length}
+           {currentQuestionIndex + 1} / {questions.length}
         </div>
         <p>{currentQuestion.text}</p>
         {currentQuestion.type === 'rating' ? (
